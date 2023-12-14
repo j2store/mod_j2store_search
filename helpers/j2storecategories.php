@@ -898,8 +898,8 @@ class J2StoreCategoryNode extends JObject
 	{
 		if (!($this->params instanceof JRegistry))
 		{
-			$temp = new JRegistry;
-			$temp->loadString($this->params);
+            $platform=J2store::platform();
+			$temp = $platform->getRegistry($this->params);
 			$this->params = $temp;
 		}
 
@@ -917,8 +917,8 @@ class J2StoreCategoryNode extends JObject
 	{
 		if (!($this->metadata instanceof JRegistry))
 		{
-			$temp = new JRegistry;
-			$temp->loadString($this->metadata);
+            $platform=J2Store::platform();
+			$temp = $platform->getRegistry($this->metadata);
 			$this->metadata = $temp;
 		}
 

@@ -13,7 +13,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 // Include the helper functions only once
 require_once __DIR__ . '/helper.php';
-$app = JFactory::getApplication();
+$app = J2Store::platform()->application();
 $search = $app->input->getString('search');
 $categoryList = $params->get('categorylist',array());
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
@@ -21,4 +21,3 @@ $param_menu_id = $params->get('display_menu_id',0);
 $active_menu = $app->getMenu()->getActive();
 $mitemid = (int) $params->get('menuitem_id', 0);
 require(JModuleHelper::getLayoutPath('mod_j2store_search' ,$params->get('layout','default')));
-

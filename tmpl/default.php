@@ -10,7 +10,7 @@
 -------------------------------------------------------------------------*/
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
-$url = JRoute::_('index.php?option=com_j2store&view=products&task=browse&Itemid='.$mitemid);
+$url = J2Store::platform()->getProductUrl(array('task'=>'browse','Itemid'=>$mitemid));
 ?>
 <div id="j2store-search-<?php echo $module->id;?>" class="j2store-search-product  <?php echo $moduleclass_sfx;?>" >
 	<form action="<?php echo $url;?>" method="" class="form-horizontal" name="j2storeserachForm" id="j2storeserachForm_<?php echo $module->id;?>" >
@@ -25,7 +25,6 @@ $url = JRoute::_('index.php?option=com_j2store&view=products&task=browse&Itemid=
 		<?php foreach ($categoryList as $key=>$cat):?>
 			<input type="hidden" name="catid[<?php echo $key;?>]" value="<?php echo $cat;?>" />
 		<?php endforeach;?>
-
 
 	</form>
 </div>
